@@ -1,5 +1,5 @@
 import { useState } from "react";
-import emailjs from "emailjs-com";
+// import emailjs from "emailjs-com";
 
 const QuoteModal = ({ isOpen, onClose }) => {
   const [formData, setFormData] = useState({
@@ -26,26 +26,26 @@ const QuoteModal = ({ isOpen, onClose }) => {
     };
 
     // Send email using EmailJS
-    emailjs
-      .send(
-        "service_3cg9h18",   // Replace with your EmailJS Service ID
-        "template_hsca93c",  // Replace with your EmailJS Template ID
-        templateParams,
-        "G0RhYgLZo7Ox57odW"    // Replace with your EmailJS Public Key
-      )
-      .then(
-        (response) => {
-          console.log("Email sent successfully!", response);
-          alert("Your message has been sent!");
-          setFormData({ firstName: "", lastName: "", email: "", phone: "", message: "" });
-          onClose();
-        },
-        (error) => {
-          console.error("Failed to send email:", error);
-          alert("Failed to send your message. Please try again later.");
-        }
-      )
-      .finally(() => setIsSending(false));
+    // emailjs
+    //   .send(
+    //     "service_3cg9h18",   // Replace with your EmailJS Service ID
+    //     "template_hsca93c",  // Replace with your EmailJS Template ID
+    //     templateParams,
+    //     "G0RhYgLZo7Ox57odW"    // Replace with your EmailJS Public Key
+    //   )
+    //   .then(
+    //     (response) => {
+    //       console.log("Email sent successfully!", response);
+    //       alert("Your message has been sent!");
+    //       setFormData({ firstName: "", lastName: "", email: "", phone: "", message: "" });
+    //       onClose();
+    //     },
+    //     (error) => {
+    //       console.error("Failed to send email:", error);
+    //       alert("Failed to send your message. Please try again later.");
+    //     }
+    //   )
+    //   .finally(() => setIsSending(false));
   };
 
   if (!isOpen) return null;
