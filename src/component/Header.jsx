@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { useLocation, useNavigate } from 'react-router-dom'; // Import useLocation hook
-import menuItems from '../utils/Menu';
+import menuItems from '../utils/menu';
 import TopBanner from './TopBanner';
 import logo from "../assets/logo.jpeg";
 
