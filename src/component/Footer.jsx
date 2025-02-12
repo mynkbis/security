@@ -2,7 +2,13 @@
 import { Twitter, FacebookIcon, InstagramIcon, LucideLinkedin } from "lucide-react"
 import { Link } from "react-router-dom"
 import logo from "../assets/logo1.jpeg"
+import QuoteModal from "./Modal/Joinus"
+import { useState } from "react"
 export default function Footer() {
+   const [show, setShow]=useState(false)
+    const handleJoin=()=>{
+      setShow(!show)
+    }
   return (
     <footer className=" w-full flex justify-center bg-[#002B4E] text-white py-12 px-4 md:px-6 pb-40">
       <div className="  flex flex-wrap justify-center w-full">
@@ -19,25 +25,20 @@ export default function Footer() {
 
         {/* Middle Column */}
         <div className="w-full md:w-1/3 mb-8 md:mb-0 text-center">
-          <h2 className="text-xl font-bold mb-4">Quick Links</h2>
+          <h2 className="text-xl font-bold mb-4 !text-white">Quick Links</h2>
           <ul className="space-y-2">
             <li>
-              <Link to="#" className="text-white hover:text-blue-400">
-                Join Us
-              </Link>
-            </li>
-            <li>
-            <Link to="#" className="hover:text-blue-400">
-                Terms and Conditions
+            <Link to="/about" className="!text-white">
+                About Us
              </Link>
             </li>
             <li>
-            <Link to="#" className="hover:text-blue-400">
+            <Link to="/contactus" className="hover:text-blue-400 !text-white">
                 Contact Us
              </Link>
             </li>
             <li>
-            <Link to="#" className="hover:text-blue-400">
+            <Link to="/services" className="hover:text-blue-400 !text-white">
               Our Services
              </Link>
             </li>
@@ -69,6 +70,7 @@ export default function Footer() {
               <InstagramIcon className="text-white" size={24} />
            </Link>
           </div>
+          <QuoteModal isOpen={show} onClose={() => handleJoin()} />
         </div>
       </div>
     </footer>

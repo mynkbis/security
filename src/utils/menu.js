@@ -5,13 +5,14 @@ const menuItems = [
       name: "Our Services",
       path: "/services",
       dropdown: [
-        { name: "Help", path: "/services/help" },
-        { name: "Support", path: "/services/support" },
-        { name: "Given", path: "/services/given" },
+        { name: "Security Guards", path: "/services/help" },
+        { name: "Crowd Control", path: "/services/support" },
+        { name: "Mobile Patrol", path: "/services/given" },
+        { name: "Infra Security", path: "/services/given" },
+        { name: "Retail Security", path: "/services/given" },
       ],
     },
     { name: "Contact Us", path: "/contactus" },
-    { name: "Join Us", path: "/join-us" },
   ];
 
   export default menuItems

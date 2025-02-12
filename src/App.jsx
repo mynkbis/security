@@ -4,6 +4,9 @@ import SharedLayout from './component/SharedLayout';
 import Home from './pages/Home';
 import AboutUs from './pages/AboutUs';
 import { useEffect } from 'react';
+import ContactPage from './pages/ContactUs';
+import Guards from './pages/Guards';
+import NotFound from './pages/Notfound';
 
 
 function App() {
@@ -14,10 +17,10 @@ function App() {
           <Route path="/" element={<SharedLayout />}>
             <Route index element={<Home />} />
             <Route path="/about" element={<AboutUs />} />
-            <Route path="/services" element={<AboutUs />} />
-            <Route path="/contactus" element={<AboutUs />} />
-            <Route path="/join-us" element={<AboutUs />} />
+            <Route path="/services" element={<Guards />} />
+            <Route path="/contactus" element={<ContactPage />} />
             {/* <Route path="about" element={<About />} /> */}
+            <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
       </div>

@@ -1,18 +1,37 @@
 import React, { useState } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
-import { Link, useLocation, useNavigate } from 'react-router-dom'; // Import useLocation hook
+import { useLocation, useNavigate } from 'react-router-dom'; // Import useLocation hook
 import menuItems from '../utils/Menu';
 import TopBanner from './TopBanner';
-import logo from "../assets/logo.jpeg"
+import logo from "../assets/logo.jpeg";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null); // Track the active dropdown
+  const [timeoutId, setTimeoutId] = useState(null); // To store the timeout ID
   const location = useLocation(); // Get the current route
-  const navigate = useNavigate()
-  const [show, setShow]=useState(false)
+  const navigate = useNavigate();
+
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  // Handle mouse enter event (show dropdown immediately)
+  const handleMouseEnter = (index) => {
+    // Clear any existing timeout when mouse enters
+    if (timeoutId) {
+      clearTimeout(timeoutId);
+    }
+    setActiveDropdown(index);
+  };
+
+  // Handle mouse leave event (start a timeout to hide dropdown after 3 seconds)
+  const handleMouseLeave = () => {
+    // Set a timeout to hide the dropdown after 3 seconds
+    const id = setTimeout(() => {
+      setActiveDropdown(null);
+    }, 500);
+    setTimeoutId(id); // Store the timeout ID
   };
 
   return (
@@ -25,8 +44,7 @@ const Header = () => {
           <div className="flex justify-between items-center h-20">
             {/* Logo */}
             <div className="flex-shrink-0">
-              <img className='w-60 h-auto' src={logo} alt="logo"/>
-              {/* <div className="text-blue-900 font-bold text-2xl">SWC</div> */}
+              <img className="w-60 h-auto" src={logo} alt="logo" />
             </div>
 
             {/* Desktop menu */}
@@ -35,14 +53,15 @@ const Header = () => {
                 <div
                   key={index}
                   className="relative group"
-                  onMouseEnter={() => setActiveDropdown(item.dropdown ? index : null)}
+                  onMouseEnter={() => handleMouseEnter(index)}
+                  onMouseLeave={handleMouseLeave} // Start the timeout when the mouse leaves
                 >
                   <span
-                    onClick={() => {navigate(`../${item.path}`)}}
-                    className={`text-blue-900 font-bold  px-2 flex items-center rounded-md p-2 transition-all duration-300 ease-in-out cursor-pointer ${
+                    onClick={() => { navigate(`../${item.path}`); }}
+                    className={`text-blue-900 font-bold px-2 flex items-center rounded-md p-2 transition-all duration-300 ease-in-out cursor-pointer ${
                       location.pathname === item.path
-                        ? 'text-white bg-blue-800' // Active tab styles based on path
-                        : 'hover:bg-blue-800 hover:!text-white'
+                        ? 'text-white bg-[#002B4E]' // Active tab styles based on path
+                        : 'hover:bg-[#002B4E] hover:!text-white'
                     }`}
                   >
                     {item.name}
@@ -51,11 +70,15 @@ const Header = () => {
 
                   {/* Dropdown Menu */}
                   {item.dropdown && activeDropdown === index && (
-                    <ul className="absolute left-0 mt-2 bg-blue-900 shadow-lg rounded w-40 text-sm z-30">
+                    <ul className="absolute left-0 mt-2 bg-[#002B4E] group shadow-lg rounded w-40 text-sm z-10">
                       {item.dropdown.map((subItem, subIndex) => (
-                        <li key={subIndex} className="px-4 py-2 cursor-pointer group hover:bg-blue-900">
-                          <span className="text-blue-900 group-hover:!text-white font-bold">{subItem.name}</span>
-                        </li> 
+                        <li
+                          key={subIndex}
+                          className="px-4 py-2 cursor-pointer group hover:bg-white/30"
+                        >
+                          {/* Default text is white, hover changes to blue */}
+                          <span className="text-white group font-bold">{subItem.name}</span>
+                        </li>
                       ))}
                     </ul>
                   )}
@@ -84,8 +107,8 @@ const Header = () => {
                       onClick={() => {}}
                       className={`text-blue-900 font-bold hover:!text-white px-2 flex items-center transition-all duration-300 ease-in-out cursor-pointer ${
                         location.pathname === item.path
-                          ? 'bg-blue-800 text-white' // Active tab styles based on path
-                          : 'hover:bg-blue-800 hover:!text-white'
+                          ? 'bg-[#002B4E] text-white' // Active tab styles based on path
+                          : 'hover:bg-[#002B4E] hover:!text-white'
                       }`}
                     >
                       {item.name}
