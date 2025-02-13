@@ -3,7 +3,7 @@ import Footer from '../component/Footer';
 import security from "../assets/images/security.jpeg"
 const AboutUs = () => {
   return (
-    <div className="relative">
+    <div className="relative bg-[#002B4E]">
       {/* Background Image with Overlay */}
       <div className="absolute w-full">
         <img
@@ -16,10 +16,9 @@ const AboutUs = () => {
 
       {/* Content */}
       <div className="relative z-10 container mx-auto">
-        <div className="max-w-4xl px-10 py-10">
-          <h1 className="text-white text-6xl font-bold mb-6 leading-tight">
+        <div className="max-w-7xl mx-auto px-6 py-32">
+        <h1 className="text-3xl font-bold text-white mb-6 leading-tight cursor-pointer hover:scale-105">
             Building Trust
-            <br />
             Through Protection
           </h1>
           
@@ -32,24 +31,24 @@ const AboutUs = () => {
         </div>
 
         {/* Additional content section */}
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 pb-4 px-4">
-          <div className="bg-[#002B4E] backdrop-blur-sm p-8 rounded-lg">
-            <h3 className="text-white text-2xl font-semibold mb-4">Experienced Team</h3>
-            <p className="text-white/90">
+        <div className="mt-16 grid md:grid-cols-3 gap-8 pb-4 px-10 sm:px-40">
+          <div className="bg-white backdrop-blur-sm  p-8 rounded-lg">
+            <h3 className="text-blue-900 text-sm sm:text-2xl font-semibold mb-4">Experienced Team</h3>
+            <p className="text-blue-900 text-sm">
               Our security professionals are highly trained and certified, bringing years of expertise to protect your assets.
             </p>
           </div>
 
-          <div className="bg-[#002B4E] backdrop-blur-sm p-8 rounded-lg">
-            <h3 className="text-white text-2xl font-semibold mb-4">Integrated Solutions</h3>
-            <p className="text-white/90">
+          <div className="bg-white backdrop-blur-sm p-8 rounded-lg">
+            <h3 className="text-blue-900 text-sm sm:text-2xl font-semibold mb-4">Integrated Solutions</h3>
+            <p className="text-blue-900">
               We provide comprehensive security solutions that combine advanced technology with human expertise.
             </p>
           </div>
 
-          <div className="bg-[#002B4E] backdrop-blur-sm p-8 rounded-lg">
-            <h3 className="text-white text-2xl font-semibold mb-4">Client Focus</h3>
-            <p className="text-white/90">
+          <div className="bg-white backdrop-blur-sm p-8 rounded-lg">
+            <h3 className="text-blue-900 text-sm sm:text-2xl font-semibold mb-4">Client Focus</h3>
+            <p className="text-blue-900">
               Your security is our priority. We work closely with you to understand and meet your specific needs.
             </p>
           </div>

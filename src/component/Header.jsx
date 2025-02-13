@@ -74,6 +74,7 @@ const Header = () => {
                       {item.dropdown.map((subItem, subIndex) => (
                         <li
                           key={subIndex}
+                          onClick={() => { navigate(`../${subItem.path}`); }}
                           className="px-4 py-2 cursor-pointer group hover:bg-white/30"
                         >
                           {/* Default text is white, hover changes to blue */}

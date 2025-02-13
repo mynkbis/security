@@ -18,7 +18,7 @@ const Home = () => {
             loop
             muted
             playsInline
-            className="absolute inset-0 w-full h-full object-cover opacity-50"
+            className="absolute inset-0 w-full h-full object-cover "
           >
             <source src={vid} type="video/mp4" />
           </video>
@@ -33,9 +33,9 @@ const Home = () => {
             <div className="text-white/90 flex gap-2">
               <Link to="/" className="!text-white hover:underline transform hover:scale-105">Home</Link>
               <span>{">>"}</span>
-              <Link to="/facility-services" className="!text-white hover:underline transform hover:scale-105">Facility Services</Link>
+              <Link to="/services" className="!text-white hover:underline transform hover:scale-105">Services</Link>
               <span>{">>"}</span>
-              <span className="text-white transform hover:scale-105 cursor-pointer">Security</span>
+              <Link to="crowd-control" className="!text-white transform hover:scale-105 cursor-pointer">Security</Link>
             </div>
           </div>
         </div>

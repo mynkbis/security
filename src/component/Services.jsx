@@ -9,12 +9,6 @@ import guard from "../assets/images/guard.jpeg"
 
 const services = [
   {
-    title: "Mobile Patrol",
-    description:
-      "Watchful Eyes, Total Security. Our CCTV camera services provide 24/7 surveillance for your peace of mind. Uncompromising protection, round the clock.",
-    image: patrol,
-  },
-  {
     title: "CCTV surveillance",
     description:
       "Operating a 24-hour grade one monitoring center. Partnering with Engage Security. Burglary and intrusions alarms are the most commonly monitored alarm types.",
@@ -23,14 +17,14 @@ const services = [
   {
     title: "Construction Security Service",
     description:
-      "Experience Security with a Personal Touch. Our Concierge Security Service offers the perfect blend of protection and hospitality, ensuring your safety.",
+     "Our security solutions protect construction sites from theft, vandalism, and unauthorized access. We deploy trained guards to monitor entry points, patrol regularly, and enforce safety protocols. With fire watch services, emergency response, CCTV surveillance, and strict access control, we safeguard equipment, materials, and personnel throughout the project lifecycle.",
     image: construction
   },
     {
       title: "Event Security",
       description:
-        "Your Safety, Our Priority. Experience elite protection with our highly trained bodyguards. We’re your trusted shield, ensuring your personal security & peace of mind.",
-      image: event
+       "Our crowd control services ensure smooth, safe events like concerts, festivals, and sports. With trained security personnel skilled in crowd management, access control, and emergency planning, we work with organizers to prevent overcrowding and conflicts. We also offer VIP security, bag checks, and perimeter monitoring for enhanced safety.",
+       image: event
     },
     {
       title: "General Security",
@@ -41,13 +35,13 @@ const services = [
     {
       title: "Retail Security Service",
       description:
-        "Construction site theft is a prevalent issue in the industry, with valuable equipment and machinery being easy targets for thieves.",
+       "Our retail security services protect stores from shoplifting, fraud, and internal theft. Trained officers monitor suspicious activities, conduct bag checks, and assist with conflict de-escalation. We implement access control, CCTV monitoring, and undercover security to prevent theft. Customizable strategies improve store operations and boost customer confidence.",
       image: security
     },
     {
       title: "Security Guard Service",
       description:
-        "Our Crowd Control division is not just about providing a physical security presence, our priority is to develop a service that will integrate seamlessly with your venue.",
+        "We offer 24/7 security for businesses, homes, and properties. Our trained guards provide armed or unarmed protection, focusing on risk assessment, emergency response, and theft prevention. With background checks and ongoing training, we ensure safety through static patrols, access control, and concierge services, offering peace of mind to clients.",
       image: guard
     },
   ];
@@ -69,7 +63,7 @@ const services = [
               <img
                 src={service.image}
                 alt={service.title}
-                className="w-full h-60  rounded-t-lg"
+                className="w-full h-80  rounded-t-lg"
               />
               <h3 className="text-lg font-bold mt-4 text-blue-900">{service.title}</h3>
               <p className="text-blue-900 mt-2">{service.description}</p>
