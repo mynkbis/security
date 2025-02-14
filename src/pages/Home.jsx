@@ -33,9 +33,9 @@ const Home = () => {
             <div className="text-white/90 flex gap-2">
               <Link to="/" className="!text-white hover:underline transform hover:scale-105">Home</Link>
               <span>{">>"}</span>
-              <Link to="/services" className="!text-white hover:underline transform hover:scale-105">Services</Link>
+              <Link to="/services/guards" className="!text-white hover:underline transform hover:scale-105">Services</Link>
               <span>{">>"}</span>
-              <Link to="crowd-control" className="!text-white transform hover:scale-105 cursor-pointer">Security</Link>
+              <Link to="/services/crowd-control" className="!text-white transform hover:scale-105 cursor-pointer">Security</Link>
             </div>
           </div>
         </div>
