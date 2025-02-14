@@ -67,9 +67,9 @@ const Home = () => {
 
         {/* Serving Melbourne Section */}
         <div className="mx-auto px-4 relative bg-white z-10 border-2 border-blue-900 shadow-xl transition-transform transform hover:scale-105 ">
-          <div className="mx-auto flex">
-            <h2 className="text-3xl text-center py-12 px-10 transform  w-[50%] whitespace-nowrap lg:text-4xl font-bold text-blue-900 cursor-pointer mb-6">Serving Melbourne</h2>
-            <p className="text-blue-900 px-16 py-16 leading-relaxed w-[50%] cursor-pointer">
+          <div className="mx-auto flex flex-col sm:flex-row">
+            <h2 className="text-3xl text-center py-12 px-10 transform w-full sm:w-[50%] sm:whitespace-nowrap lg:text-4xl font-bold text-blue-900 cursor-pointer mb-6">Serving Melbourne</h2>
+            <p className="text-blue-900 px-16 py-4 sm:py-16 leading-relaxedw-full sm:w-[50%] cursor-pointer">
               N-Force Security proudly serves Melbourne, offering comprehensive security solutions tailored to the unique
               needs of each city. Our experienced local teams understand the specific security challenges of each region,
               providing responsive and reliable services to ensure safety and peace of mind for businesses and events in

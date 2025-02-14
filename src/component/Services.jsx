@@ -63,7 +63,7 @@ const services = [
               <img
                 src={service.image}
                 alt={service.title}
-                className="w-full h-80  rounded-t-lg"
+                className="w-full sm:h-80  rounded-t-lg"
               />
               <h3 className="text-lg font-bold mt-4 text-blue-900">{service.title}</h3>
               <p className="text-blue-900 mt-2">{service.description}</p>

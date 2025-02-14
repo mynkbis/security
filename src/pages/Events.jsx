@@ -24,10 +24,10 @@ const EventsSecurity = () => {
         <div className="relative h-full">
           <div className="max-w-7xl mx-auto px-6 py-32">
             <div className="">
-              <h1 className="text-3xl font-bold text-white mb-6 leading-tight cursor-pointer hover:scale-105">
+            <h1 className="text-sm sm:text-3xl font-bold text-white mb-6 leading-tight cursor-pointer hover:scale-105">
                 Crowd Control and Events
               </h1>
-              <p className="text-lg text-white mb-8 cursor-pointer leading-9 hover:scale-105">
+              <p className="text-xs sm:text-lg text-white mb-8 cursor-pointer sm:leading-9 hover:scale-105">
                 Managing large crowds requires expertise, strategy, and a proactive approach to safety. Our crowd control
                 services ensure smooth operations at concerts, festivals, sporting events, and corporate gatherings. We
                 provide highly trained security personnel skilled in crowd management, access control, and emergency

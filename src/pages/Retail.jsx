@@ -22,9 +22,9 @@ const RetailSecurity = () => {
         {/* Content */}
         <div className="relative h-full">
           <div className="max-w-7xl mx-auto px-6 py-32">
-            <div className="text-sm sm:text-2xl">
-              <h1 className="text-xs sm:text-3xl font-bold text-white mb-6 leading-tight cursor-pointer hover:scale-105">
-              Retail Security and Loss Prevention Security Services
+            <div className="">
+            <h1 className="text-sm sm:text-3xl font-bold text-white mb-6 leading-tight cursor-pointer hover:scale-105">
+            Retail Security and Loss Prevention Security Services
               </h1>
               <p className="text-sm sm:text-lg text-white mb-8 cursor-pointer sm:leading-9 hover:scale-105">
               Retail businesses face constant threats of shoplifting, fraud, and internal theft. Our retail security

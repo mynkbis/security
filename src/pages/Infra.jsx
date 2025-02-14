@@ -21,12 +21,12 @@ const Infra = () => {
         
         {/* Content */}
         <div className="relative h-full">
-          <div className="max-w-7xl mx-auto px-6 py-32">
-            <div className="">
-              <h1 className="text-3xl font-bold text-white mb-6 leading-tight cursor-pointer hover:scale-105">
+     <div className="max-w-7xl mx-auto px-6 py-32">
+       <div className="">
+            <h1 className="text-xs sm:text-3xl font-bold text-white sm:mb-6 leading-tight cursor-pointer hover:scale-105">
               Construction, Infrastructure, and Building Environment Security
               </h1>
-              <p className="text-lg text-white mb-8 cursor-pointer leading-9 hover:scale-105">
+              <p className="text-xs sm:text-lg text-white mb-8 cursor-pointer sm:leading-9 hover:scale-105">
               Construction sites and infrastructure projects are vulnerable to theft, vandalism, and unauthorized access.
               Our security solutions ensure that equipment, materials, and personnel remain safe throughout the project
               lifecycle. We deploy trained security guards to monitor entry points, conduct regular patrols, and enforce

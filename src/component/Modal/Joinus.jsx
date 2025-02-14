@@ -73,7 +73,7 @@ const QuoteModal = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-[#000000d6] bg-opacity-10 flex items-center justify-center p-4 z-50">
+    <div className="fixed inset-0 bg-[#000000d6] bg-opacity-10 flex items-center justify-center sm:pt-40 sm:p-10 p-6 overflow-scroll z-50">
       <div className="bg-white rounded-lg p-8 w-full max-w-2xl relative common-shadow">
         <button onClick={onClose} className="absolute right-4 top-4 cursor-pointer text-blue-900 hover:text-blue-700 text-3xl font-bold">
           ×
@@ -147,7 +147,7 @@ const QuoteModal = ({ isOpen, onClose }) => {
 
           <button
             type="submit"
-            className="bg-[#002B4E] text-white px-8 py-2 rounded hover:bg-blue-800 transition-colors"
+            className="bg-[#002B4E] text-white px-8 py-2 cursor-pointer rounded hover:bg-blue-800 transition-colors"
             disabled={isSending}
           >
             {isSending ? "SENDING..." : "SEND"}

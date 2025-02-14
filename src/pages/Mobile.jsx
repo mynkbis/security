@@ -23,10 +23,10 @@ const MobilePetrol = () => {
         <div className="relative h-full">
           <div className="max-w-7xl mx-auto px-6 py-32">
             <div className="">
-              <h1 className="text-3xl font-bold text-white mb-6 leading-tight cursor-pointer hover:scale-105">
+            <h1 className="text-sm sm:text-3xl font-bold text-white mb-6 leading-tight cursor-pointer hover:scale-105">
               Mobile Patrols
               </h1>
-              <p className="text-lg text-white mb-8 cursor-pointer leading-9 hover:scale-105">
+              <p className="text-xs sm:text-lg text-white mb-8 cursor-pointer sm:leading-9 hover:scale-105">
               Our mobile patrol security services provide a proactive approach to property protection, ensuring
               round-the-clock surveillance of commercial, industrial, and residential areas. Equipped with marked
               security vehicles, our patrol officers conduct scheduled and random inspections, deterring potential
