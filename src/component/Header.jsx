@@ -55,7 +55,7 @@ const Header = () => {
                   onMouseLeave={handleMouseLeave}
                 >
                   <span
-                    onClick={() => { navigate(`../${item.path}`); }}
+                    onClick={() => {item.path && navigate(`../${item.path}`); }}
                     className={`text-blue-900 font-bold px-2 flex items-center rounded-md p-2 transition-all duration-300 ease-in-out cursor-pointer ${
                       location.pathname === item.path
                         ? 'text-white bg-[#002B4E]'
