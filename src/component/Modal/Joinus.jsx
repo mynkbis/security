@@ -1,4 +1,7 @@
 import { useState } from "react";
+import emailjs from "emailjs-com";
+import { toast } from "react-toastify";
+
 
 const QuoteModal = ({ isOpen, onClose }) => {
   const [formData, setFormData] = useState({
@@ -45,21 +48,21 @@ const QuoteModal = ({ isOpen, onClose }) => {
       message: formData.message,
     };
 
-    // Send email using EmailJS (as per your original comment)
-    // emailjs.send("service_3cg9h18", "template_hsca93c", templateParams, "G0RhYgLZo7Ox57odW")
-    //   .then(
-    //     (response) => {
-    //       console.log("Email sent successfully!", response);
-    //       alert("Your message has been sent!");
-    //       setFormData({ firstName: "", lastName: "", email: "", phone: "", message: "" });
-    //       onClose();
-    //     },
-    //     (error) => {
-    //       console.error("Failed to send email:", error);
-    //       alert("Failed to send your message. Please try again later.");
-    //     }
-    //   )
-    //   .finally(() => setIsSending(false));
+    emailjs.send( "service_y5vh6ji","template_w9jpbkk", templateParams,
+      "_3xZkydaoygQpJ1yH")  
+      .then(
+        (response) => {
+          console.log("Email sent successfully!", response);
+          toast.success("Message sent successfully!", { position: "top-left" });
+          setFormData({ firstName: "", lastName: "", email: "", phone: "", message: "" });
+          onClose();
+        },
+        (error) => {
+          console.error("Failed to send email:", error);
+          toast.warn("Failed to send your message. Please try again later.", { position: "top-left" });
+        }
+      )
+      .finally(() => setIsSending(false));
   };
 
   // Handle the phone input change and ensure that it only contains numbers and an optional '+'
@@ -125,6 +128,8 @@ const QuoteModal = ({ isOpen, onClose }) => {
               <input
                 type="tel"
                 required
+                length={10}
+                maxLength={10}
                 className="w-full text-black p-2 border border-gray-400 rounded"
                 placeholder="Your phone number"
                 value={formData.phone}

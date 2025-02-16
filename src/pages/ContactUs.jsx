@@ -1,34 +1,96 @@
-import React from 'react';
-import { MapPin, Phone, Mail } from 'lucide-react';
-import event from "../assets/images/event.jpeg"
-import Footer from '../component/Footer';
+import React, { useState } from "react";
+import { MapPin, Phone, Mail } from "lucide-react";
+import emailjs from "emailjs-com";
+import event from "../assets/images/event.jpeg";
+import Footer from "../component/Footer";
 
 const ContactPage = () => {
+  // State for form inputs
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+
+  // State for validation errors
+  const [errors, setErrors] = useState({});
+
+  // Handle input change
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  // Validate form fields
+  const validateForm = () => {
+    let newErrors = {};
+    if (!formData.firstName.trim()) newErrors.firstName = "First Name is required";
+    if (!formData.lastName.trim()) newErrors.lastName = "Last Name is required";
+    if (!formData.email.trim()) {
+      newErrors.email = "Email is required";
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      newErrors.email = "Enter a valid email address";
+    }
+    if (!formData.phone.trim()) {
+      newErrors.phone = "Phone is required";
+    } else if (!/^\d{10}$/.test(formData.phone)) {
+      newErrors.phone = "Enter a valid 10-digit phone number";
+    }
+    if (!formData.message.trim()) newErrors.message = "Message is required";
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission logic here
+
+    if (!validateForm()) return;
+
+    emailjs
+      .send(
+        "YOUR_SERVICE_ID", // Replace with your EmailJS service ID
+        "YOUR_TEMPLATE_ID", // Replace with your EmailJS template ID
+        {
+          to_name: "Admin",
+          first_name: formData.firstName,
+          last_name: formData.lastName,
+          email: formData.email,
+          phone: formData.phone,
+          message: formData.message,
+        },
+        "YOUR_PUBLIC_KEY" // Replace with your EmailJS public key
+      )
+      .then((result) => {
+        alert("Message sent successfully!");
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          phone: "",
+          message: "",
+        });
+      })
+      .catch((error) => {
+        console.error("Email sending failed:", error);
+      });
   };
 
   return (
     <div className="min-h-screen flex flex-col">
       {/* Hero Section */}
       <div className="relative bg-[#002B4E]">
-        {/* Background Image with Overlay */}
         <div className="absolute inset-0">
-          <img
-            src={event}
-            alt="Security Team"
-            className="w-full h-[30vh] object-cover"
-          />
+          <img src={event} alt="Security Team" className="w-full h-[30vh] object-cover" />
           <div className="absolute inset-0 bg-[#002B4E]/80"></div>
         </div>
-        
-        {/* Hero Content */}
-        <div className="relative container mx-auto px-14 py-12 md:py-16">
+        <div className="relative w-full container mx-auto px-14 py-12 md:py-16">
           <h1 className="text-2xl sm:text-4xl font-bold text-white mb-4 md:mb-6 leading-tight">
             Contact Us
           </h1>
-          <p className="text-base sm:text-lg text-white max-w-2xl sm:leading-relaxed">
+          <p className="text-base sm:text-lg text-white sm:leading-relaxed">
             We're here to help you with all your security needs. Whether you have a question, need more
             information about our services, or are ready to partner with us, the SWC Security team is ready
             to assist.
@@ -67,75 +129,72 @@ const ContactPage = () => {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="firstName" className="block text-blue-900 font-medium mb-2">
-                    First Name *
-                  </label>
+                  <label className="block text-blue-900 font-medium mb-2">First Name *</label>
                   <input
                     type="text"
-                    id="firstName"
-                    className="w-full text-black p-3 border border-gray-300 rounded focus:ring-2 focus:ring-[#002B4E] focus:border-[#002B4E]"
+                    name="firstName"
+                    value={formData.firstName}
+                    onChange={handleChange}
+                    className="w-full text-black p-3 border border-gray-300 rounded"
                     placeholder="Your first name"
-                    required
                   />
+                  {errors.firstName && <p className="text-red-500 text-sm">{errors.firstName}</p>}
                 </div>
                 <div>
-                  <label htmlFor="lastName" className="block text-blue-900 font-medium mb-2">
-                    Last Name *
-                  </label>
+                  <label className="block text-blue-900 font-medium mb-2">Last Name *</label>
                   <input
                     type="text"
-                    id="lastName"
-                    className="w-full text-black p-3 border border-gray-300 rounded focus:ring-2 focus:ring-[#002B4E] focus:border-[#002B4E]"
+                    name="lastName"
+                    value={formData.lastName}
+                    onChange={handleChange}
+                    className="w-full text-black p-3 border border-gray-300 rounded"
                     placeholder="Your last name"
-                    required
                   />
+                  {errors.lastName && <p className="text-red-500 text-sm">{errors.lastName}</p>}
                 </div>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="email" className="block text-blue-900 font-medium mb-2">
-                    Email *
-                  </label>
+                  <label className="block text-blue-900 font-medium mb-2">Email *</label>
                   <input
                     type="email"
-                    id="email"
-                    className="w-full text-black p-3 border border-gray-300 rounded focus:ring-2 focus:ring-[#002B4E] focus:border-[#002B4E]"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    className="w-full text-black p-3 border border-gray-300 rounded"
                     placeholder="Your email address"
-                    required
                   />
+                  {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
                 </div>
                 <div>
-                  <label htmlFor="phone" className="block text-blue-900 font-medium mb-2">
-                    Phone *
-                  </label>
+                  <label className="block text-blue-900 font-medium mb-2">Phone *</label>
                   <input
                     type="tel"
-                    id="phone"
-                    className="w-full p-3 text-black border border-gray-300 rounded focus:ring-2 focus:ring-[#002B4E] focus:border-[#002B4E]"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    className="w-full p-3 text-black border border-gray-300 rounded"
                     placeholder="Your phone number"
-                    required
                   />
+                  {errors.phone && <p className="text-red-500 text-sm">{errors.phone}</p>}
                 </div>
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-blue-900 font-medium mb-2">
-                  Message *
-                </label>
+                <label className="block text-blue-900 font-medium mb-2">Message *</label>
                 <textarea
-                  id="message"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
                   rows={6}
-                  className="w-full text-black p-3 border border-gray-300 rounded focus:ring-2 focus:ring-[#002B4E] focus:border-[#002B4E]"
+                  className="w-full text-black p-3 border border-gray-300 rounded"
                   placeholder="Your message"
-                  required
                 />
+                {errors.message && <p className="text-red-500 text-sm">{errors.message}</p>}
               </div>
 
-              <button
-                type="submit"
-                className="bg-[#002B4E] text-white hover:bg-blue-800 cursor-pointer px-8 py-3 rounded font-medium transition-colors duration-200"
-              >
+              <button type="submit" className="bg-[#002B4E] cursor-pointer text-white px-8 py-3 rounded font-medium">
                 Send Message
               </button>
             </form>
