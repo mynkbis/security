@@ -152,7 +152,7 @@ const QuoteModal = ({ isOpen, onClose }) => {
 
           <button
             type="submit"
-            className="bg-[#002B4E] text-white px-8 py-2 cursor-pointer rounded hover:bg-blue-800 transition-colors"
+            className="bg-[#2f3c6e] text-white px-8 py-2 cursor-pointer rounded hover:bg-blue-800 transition-colors"
             disabled={isSending}
           >
             {isSending ? "SENDING..." : "SEND"}

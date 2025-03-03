@@ -10,7 +10,7 @@ export default function Footer() {
       setShow(!show)
     }
   return (
-    <footer className=" w-full flex justify-center bg-[#002B4E] text-white py-12 px-4 md:px-6 pb-40">
+    <footer className=" w-full flex justify-center bg-[#2f3c6e] text-white py-12 px-4 md:px-6 pb-40">
       <div className="  flex flex-wrap justify-center w-full">
         {/* Left Column */}
         <div className="w-full md:w-1/3 mb-8 md:mb-0 text-center">

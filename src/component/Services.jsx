@@ -48,7 +48,7 @@ const services = [
   
   export default function OurServices() {
     return (
-      <div className="bg-[#002B4E] text-black py-12 px-6 text-center">
+      <div className="bg-[#2f3c6e] text-black py-12 px-6 text-center">
         <h2 className="text-3xl text-white font-semibold hover:scale-105 cursor-pointer">Our Services</h2>
         <p className="max-w-2xl mx-auto mt-4 text-white hover:scale-105 cursor-pointer">
           “Elevate Your Safety with Our Premium Security Guards Services. Our expert team ensures unrivaled protection 

@@ -12,7 +12,7 @@ const SharedLayout = () => {
       <main className="h-screen overflow-auto bg-botpulseOutletBg z-10">
             <Outlet />
       </main>
-      <button className="hover:bg-[#002B4E] text-blue-900 bg-white px-3 py-1 cursor-pointer rounded-md uppercase border hover:border-2-[#002B4E]common-shadow hover:text-white font-bold fixed bottom-4 right-6 z-10" onClick={() => setIsModalOpen(true)}>
+      <button className="hover:bg-[#2f3c6e] text-blue-900 bg-white px-3 py-1 cursor-pointer rounded-md uppercase border hover:border-2-[#002B4E]common-shadow hover:text-white font-bold fixed bottom-4 right-6 z-10" onClick={() => setIsModalOpen(true)}>
        <span onClick={() => setIsModalOpen(true)}  className='cursor-pointer'> Join Us </span>
       </button>
       <QuoteModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />

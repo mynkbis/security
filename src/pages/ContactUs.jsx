@@ -81,10 +81,10 @@ const ContactPage = () => {
   return (
     <div className="min-h-screen flex flex-col">
       {/* Hero Section */}
-      <div className="relative bg-[#002B4E]">
+      <div className="relative bg-[#2f3c6e]">
         <div className="absolute inset-0">
           <img src={event} alt="Security Team" className="w-full h-[30vh] object-cover" />
-          <div className="absolute inset-0 bg-[#002B4E]/80"></div>
+          <div className="absolute inset-0 bg-[#2f3c6e]/80"></div>
         </div>
         <div className="relative w-full container mx-auto px-14 py-12 md:py-16">
           <h1 className="text-2xl sm:text-4xl font-bold text-white mb-4 md:mb-6 leading-tight">
@@ -104,19 +104,19 @@ const ContactPage = () => {
           {/* Contact Info */}
           <div className="mb-12 space-y-6 px-8">
             <div className="flex items-center gap-4">
-              <div className="bg-[#002B4E] p-2 rounded-full">
+              <div className="bg-[#2f3c6e] p-2 rounded-full">
                 <Phone size={20} className="text-white" />
               </div>
               <span className="text-blue-900 text-sm md:text-lg">+61 422 446 444</span>
             </div>
             <div className="flex items-center gap-4">
-              <div className="bg-[#002B4E] p-2 rounded-full">
+              <div className="bg-[#2f3c6e] p-2 rounded-full">
                 <Mail size={20} className="text-white" />
               </div>
               <span className="text-blue-900 text-sm md:text-lg">Operations@nforcesecurity.net</span>
             </div>
             <div className="flex items-center gap-4">
-              <div className="bg-[#002B4E] p-2 rounded-full">
+              <div className="bg-[#2f3c6e] p-2 rounded-full">
                 <MapPin size={20} className="text-white" />
               </div>
               <span className="text-blue-900 text-sm md:text-lg">4 Guell Lane, Clyde North, VIC 3978</span>
@@ -194,7 +194,7 @@ const ContactPage = () => {
                 {errors.message && <p className="text-red-500 text-sm">{errors.message}</p>}
               </div>
 
-              <button type="submit" className="bg-[#002B4E] cursor-pointer text-white px-8 py-3 rounded font-medium">
+              <button type="submit" className="bg-[#2f3c6e] cursor-pointer text-white px-8 py-3 rounded font-medium">
                 Send Message
               </button>
             </form>

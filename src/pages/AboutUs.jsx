@@ -3,7 +3,7 @@ import Footer from '../component/Footer';
 import security from "../assets/images/security.jpeg"
 const AboutUs = () => {
   return (
-    <div className="relative bg-[#002B4E]">
+    <div className="relative bg-[#2f3c6e]">
       {/* Background Image with Overlay */}
       <div className="absolute w-full">
         <img

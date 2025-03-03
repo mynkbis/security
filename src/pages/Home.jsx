@@ -43,7 +43,7 @@ const Home = () => {
         {/* Two Column Section */}
         <div className="flex flex-col md:flex-row relative z-10">
           {/* Left Column */}
-          <div className="w-full md:w-1/2 bg-[#002B4E] text-white p-12 lg:p-16 transition-transform transform cursor-pointer">
+          <div className="w-full md:w-1/2 bg-[#2f3c6e] text-white p-12 lg:p-16 transition-transform transform cursor-pointer">
             <h2 className="text-3xl lg:text-4xl font-bold mb-6 hover:scale-105 ">Highly Skilled & Professional Team</h2>
             <p className="text-white/90 leading-relaxed hover:scale-105 ">
               Our security personnel are not just highly trained; they embody professionalism, discipline, and dedication.
