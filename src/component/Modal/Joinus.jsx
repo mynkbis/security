@@ -48,8 +48,8 @@ const QuoteModal = ({ isOpen, onClose }) => {
       message: formData.message,
     };
 
-    emailjs.send( "service_y5vh6ji","template_w9jpbkk", templateParams,
-      "_3xZkydaoygQpJ1yH")  
+    emailjs.send( "service_uossrjm","template_pwoph4b", templateParams,
+      "FonFzKs79oqkXpYuy")  
       .then(
         (response) => {
           console.log("Email sent successfully!", response);
