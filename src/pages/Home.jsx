@@ -46,10 +46,7 @@ const Home = () => {
           <div className="w-full md:w-1/2 bg-[#2f3c6e] text-white p-12 lg:p-16 transition-transform transform cursor-pointer">
             <h2 className="text-3xl lg:text-4xl font-bold mb-6 hover:scale-105 ">Highly Skilled & Professional Team</h2>
             <p className="text-white/90 leading-relaxed hover:scale-105 ">
-              Our security personnel are not just highly trained; they embody professionalism, discipline, and dedication.
-              Many of our team members come from military backgrounds, bringing a level of precision and tactfulness to
-              every assignment. This expertise allows us to manage any situation discreetly and effectively, ensuring your
-              safety and peace of mind.
+           Our security personnel are highly trained and committed to delivering reliable protection. They embody professionalism, discipline, and dedication, ensuring every assignment is managed with discretion and efficiency. With our team on-site, you can have confidence in your safety and peace of mind.
             </p>
           </div>
 
@@ -57,32 +54,25 @@ const Home = () => {
           <div className="w-full md:w-1/2 bg-white p-12 lg:p-16 text-blue-900 transition-transform transform  cursor-pointer">
             <h2 className="text-3xl lg:text-4xl font-bold mb-6 hover:scale-105">Commitment to Excellence & Reliability</h2>
             <p className="leading-relaxed hover:scale-105">
-              At N-Force Security, we are dedicated to providing the highest standard of security solutions, underpinned by
-              our commitment to excellence and reliability. With over 70 years of combined management experience, our team
-              ensures every client receives tailored, professional service designed to meet their unique security needs,
-              fostering a secure and thriving environment.
+             At N-Force Security, we are dedicated to delivering the highest standard of security solutions with a strong focus on excellence and reliability. With 16 years of combined management experience, our team provides tailored services to meet the unique needs of each client, helping to create safe and secure environments across Melbourne and regional Victoria.
             </p>
           </div>
         </div>
 
-        {/* Serving Melbourne Section */}
+        {/* Serving Melbourne and Regional Victoria Section */}
         <div className="mx-auto px-4 relative bg-white z-10 border-2 border-blue-900 shadow-xl transition-transform transform hover:scale-105 ">
           <div className="mx-auto flex flex-col sm:flex-row">
-            <h2 className="text-3xl text-center py-12 px-10 transform w-full sm:w-[50%] sm:whitespace-nowrap lg:text-4xl font-bold text-blue-900 cursor-pointer mb-6">Serving Melbourne</h2>
+            <h2 className="text-3xl lg:text-4xl font-bold mb-6 hover:scale-105 py-12 px-10 transform w-full sm:w-[50%] sm:whitespace-nowrap lg:text-4xl font-bold text-blue-900 cursor-pointer mb-6">Serving Melbourne and Regional Victoria</h2>
             <p className="text-blue-900 px-16 py-4 sm:py-16 leading-relaxedw-full sm:w-[50%] cursor-pointer">
-              N-Force Security proudly serves Melbourne, offering comprehensive security solutions tailored to the unique
-              needs of each city. Our experienced local teams understand the specific security challenges of each region,
-              providing responsive and reliable services to ensure safety and peace of mind for businesses and events in
-              both metropolitan areas.
+             N-Force Security proudly serves Melbourne and regional Victoria, providing reliable security solutions tailored to each client’s needs. Our local team understands the unique challenges of different areas and delivers responsive, professional services to ensure safety and peace of mind for businesses, communities, and events.
             </p>
           </div>
         </div>
-<OurServices/>
+        <OurServices/>
         {/* Google Reviews Section */}
         <SecurityServices/>
         {/* <GoogleReviews /> */}
       </main>
-
       {/* Footer */}
       <Footer />
     </div>

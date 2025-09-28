@@ -11,7 +11,7 @@ const services = [
   {
     title: "CCTV surveillance",
     description:
-      "Operating a 24-hour grade one monitoring center. Partnering with Engage Security. Burglary and intrusions alarms are the most commonly monitored alarm types.",
+      "We operate a 24-hour, grade one monitoring centre to ensure round-the-clock protection for our clients. Our CCTV surveillance services provide real-time monitoring and rapid response to any suspicious activity, helping prevent incidents before they escalate. In addition to CCTV, we also monitor burglary and intrusion alarms, offering a complete security solution that ensures your premises are always safeguarded.",
     image: cam,
   },
   {

@@ -1,5 +1,5 @@
 
-import { Twitter, FacebookIcon, InstagramIcon, LucideLinkedin } from "lucide-react"
+import { Twitter, FacebookIcon, InstagramIcon, LucideLinkedin, X } from "lucide-react"
 import { Link } from "react-router-dom"
 import logo from "../assets/logo1.jpeg"
 import QuoteModal from "./Modal/Joinus"
@@ -60,8 +60,8 @@ export default function Footer() {
             <Link to="https://www.facebook.com/share/15f9PRKU5R/ " className="hover:text-blue-400 transition-colors">
               <FacebookIcon className="text-white" size={24} />
            </Link>
-           <Link to="" className="hover:text-blue-400 transition-colors">
-              <Twitter size={24} />
+           <Link to="https://x.com/nforcesec?t=UfNgyuksSZTt6owADPPxPA&s=08 " className="hover:text-blue-400 transition-colors">
+              <X size={24} />
            </Link>
            <Link to="#" className="hover:text-blue-400 transition-colors">
               <LucideLinkedin size={24} />

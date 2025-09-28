@@ -17,7 +17,7 @@ const reviews = [
     initials: "KB",
     rating: 5,
     review:
-      "My event was a great success. All thanks to the qualified and skilled team of SWC Security Service. They were very supportive & tactful enough to detect and solve any issues if raised. Commendable service.",
+      "My event was a great success. All thanks to the qualified and skilled team of N-Force Security Service. They were very supportive & tactful enough to detect and solve any issues if raised. Commendable service.",
   },
   {
     id: 3,

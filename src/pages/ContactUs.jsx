@@ -92,7 +92,7 @@ const ContactPage = () => {
           </h1>
           <p className="text-base sm:text-lg text-white sm:leading-relaxed">
             We're here to help you with all your security needs. Whether you have a question, need more
-            information about our services, or are ready to partner with us, the SWC Security team is ready
+            information about our services, or are ready to partner with us, the N-Force Security team is ready
             to assist.
           </p>
         </div>
