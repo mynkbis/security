@@ -129,7 +129,10 @@ const ContactPage = () => {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-blue-900 font-medium mb-2">First Name *</label>
+                  <div className="flex gap-1">
+                  <label className="block text-blue-900 font-medium mb-2">First Name</label>
+                  <span className="text-red-600 text-lg font-bold">*</span>
+                 </div>
                   <input
                     type="text"
                     name="firstName"
@@ -141,7 +144,10 @@ const ContactPage = () => {
                   {errors.firstName && <p className="text-red-500 text-sm">{errors.firstName}</p>}
                 </div>
                 <div>
-                  <label className="block text-blue-900 font-medium mb-2">Last Name *</label>
+                <div className="flex gap-1">
+                  <label className="block text-blue-900 font-medium mb-2">last Name</label>
+                  <span className="text-red-600 text-lg font-bold">*</span>
+                 </div>
                   <input
                     type="text"
                     name="lastName"
@@ -156,7 +162,10 @@ const ContactPage = () => {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-blue-900 font-medium mb-2">Email *</label>
+                   <div className="flex gap-1">
+                  <label className="block text-blue-900 font-medium mb-2">Email</label>
+                  <span className="text-red-600 text-lg font-bold">*</span>
+                 </div>
                   <input
                     type="email"
                     name="email"
@@ -168,7 +177,10 @@ const ContactPage = () => {
                   {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
                 </div>
                 <div>
-                  <label className="block text-blue-900 font-medium mb-2">Phone *</label>
+                 <div className="flex gap-1">
+                  <label className="block text-blue-900 font-medium mb-2">Phone</label>
+                  <span className="text-red-600 text-lg font-bold">*</span>
+                 </div>
                   <input
                     type="tel"
                     name="phone"
@@ -182,7 +194,10 @@ const ContactPage = () => {
               </div>
 
               <div>
-                <label className="block text-blue-900 font-medium mb-2">Message *</label>
+                <div className="flex gap-1">
+                  <label className="block text-blue-900 font-medium mb-2">Message</label>
+                  <span className="text-red-600 text-lg font-bold">*</span>
+                 </div>
                 <textarea
                   name="message"
                   value={formData.message}
