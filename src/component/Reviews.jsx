@@ -32,7 +32,7 @@ const reviews = [
 
 const GoogleReviews=()=> {
   return (
-    <section className="bg-[#2f3c6e] py-16 px-4">
+    <section className="bg-[#02278a] py-16 px-4">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-12">Google Reviews</h2>
 
@@ -41,7 +41,7 @@ const GoogleReviews=()=> {
             <div key={review.id} className="bg-[#fff] hover:bg-blue-50 common-shadow rounded-2xl p-6 flex flex-col h-full hover:scale-105 transition delay-150 cursor-pointer">
               <div className="flex flex-col justify-center items-center gap-4 mb-4">
                 {review.initials ? (
-                  <div className="w-24 h-24 rounded-full bg-[#2f3c6e] text-white flex items-center justify-center text-2xl font-bold">
+                  <div className="w-24 h-24 rounded-full bg-[#02278a] text-white flex items-center justify-center text-2xl font-bold">
                     {review.initials}
                   </div>
                 ) : (

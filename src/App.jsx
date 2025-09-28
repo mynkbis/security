@@ -12,6 +12,7 @@ import MobilePetrol from './pages/Mobile';
 import RetailSecurity from './pages/Retail';
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css"; // Ensure toast styles are applied
+import Services from './pages/Service';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
             <Route index element={<Home />} />
             <Route path="/about" element={<AboutUs />} />
             <Route path="/services">
+              <Route path="" element={<Services />} />
               <Route path="guards" element={<Guards />} />
               <Route path="crowd-control" element={<EventsSecurity />} />
               <Route path="mobile-patrol" element={<MobilePetrol />} />

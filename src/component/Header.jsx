@@ -41,8 +41,8 @@ const Header = () => {
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex justify-between items-center h-20">
             {/* Logo */}
-            <div className="flex-shrink-0">
-              <img className="w-60 h-auto" src={logo} alt="logo" />
+            <div className="flex-shrink-0 overflow-hidden" onClick={()=>{navigate("/")}}>
+              <img className="sm:w-60 h-auto cursor-pointer w-40" src={logo} alt="logo" />
             </div>
 
             {/* Desktop menu */}
@@ -58,8 +58,8 @@ const Header = () => {
                     onClick={() => {item.path && navigate(`../${item.path}`); }}
                     className={`text-blue-900 font-bold px-2 flex items-center rounded-md p-2 transition-all duration-300 ease-in-out cursor-pointer ${
                       location.pathname === item.path
-                        ? 'text-white bg-[#2f3c6e]'
-                        : 'hover:bg-[#2f3c6e] hover:!text-white'
+                        ? 'text-white bg-[#02278a]'
+                        : '!hover:bg-[#02278a] hover:!text-white'
                     }`}
                   >
                     {item.name}
@@ -68,7 +68,7 @@ const Header = () => {
 
                   {/* Desktop Dropdown Menu */}
                   {item.dropdown && activeDropdown === index && (
-                    <ul className="absolute left-0 mt-2 bg-[#2f3c6e] group shadow-lg rounded w-40 text-sm z-10">
+                    <ul className="absolute left-0 mt-2 bg-[#02278a] group shadow-lg rounded w-40 text-sm z-10">
                       {item.dropdown.map((subItem, subIndex) => (
                         <li
                           key={subIndex}
@@ -110,8 +110,8 @@ const Header = () => {
                         }}
                         className={`text-blue-900 font-bold hover:!text-white px-2 flex-grow flex items-center transition-all duration-300 ease-in-out cursor-pointer ${
                           location.pathname === item.path
-                            ? 'bg-[#2f3c6e] text-white'
-                            : 'hover:bg-[#2f3c6e] hover:!text-white'
+                            ? 'bg-[#02278a] text-white'
+                            : 'hover:bg-[#02278a] hover:!text-white'
                         }`}
                       >
                         {item.name}

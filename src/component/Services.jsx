@@ -48,7 +48,8 @@ const services = [
   
   export default function OurServices() {
     return (
-      <div className="bg-[#2f3c6e] text-black py-12 px-6 text-center">
+      <div className="bg-[#02278a] w-full text-black py-12 px-6 text-center flex justify-center">
+        <div className="max-w-7xl">
         <h2 className="text-3xl text-white font-semibold hover:scale-105 cursor-pointer">Our Services</h2>
         <p className="max-w-2xl mx-auto mt-4 text-white hover:scale-105 cursor-pointer">
           “Elevate Your Safety with Our Premium Security Guards Services. Our expert team ensures unrivaled protection 
@@ -63,13 +64,14 @@ const services = [
               <img
                 src={service.image}
                 alt={service.title}
-                className="w-full sm:h-80  rounded-t-lg"
+                className="w-full sm:h-70  rounded-t-lg"
               />
               <h3 className="text-lg font-bold mt-4 text-blue-900">{service.title}</h3>
               <p className="text-blue-900 mt-2">{service.description}</p>
             </div>
           ))}
         </div>
+      </div>
       </div>
     );
   }

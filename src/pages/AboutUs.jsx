@@ -3,9 +3,9 @@ import Footer from '../component/Footer';
 import security from "../assets/images/security.jpeg"
 const AboutUs = () => {
   return (
-    <div className="relative bg-[#2f3c6e]">
+    <div className="relative bg-[#02278a]">
       {/* Background Image with Overlay */}
-      <div className="absolute w-full">
+      <div className="absolute w-full hidden sm:flex">
         <img
           src={security}
           alt="Security Professionals"
@@ -15,8 +15,8 @@ const AboutUs = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto">
-        <div className="max-w-7xl mx-auto px-6 py-4 md:py-20">
+      <div className="flex flex-col relative z-10 py-4 container mx-auto">
+        <div className="max-w-7xl mx-auto px-10 py-4 md:py-20">
         <h1 className="text-sm sm:text-3xl font-bold text-white mb-2 md:mb-6 leading-tight cursor-pointer hover:scale-105">
             Building Trust
             Through Protection
@@ -30,7 +30,7 @@ const AboutUs = () => {
         </div>
 
         {/* Additional content section */}
-        <div className="mt-16 grid md:grid-cols-3 gap-8 pb-4 px-10 sm:px-40 md:px-20 lg:px-30">
+        <div className="grid md:grid-cols-3 mt-2 gap-8 xs:pb-14 px-10 sm:px-40 md:px-20 lg:px-30">
           <div className="bg-white backdrop-blur-sm  p-8 rounded-lg">
             <h3 className="text-blue-900 text-sm sm:text-2xl font-semibold mb-4">Experienced Team</h3>
             <p className="text-blue-900 text-sm">
@@ -52,6 +52,7 @@ const AboutUs = () => {
             </p>
           </div>
         </div>
+        <span className='w-full h-[1px] shadow-lg sm:h-[0px] bg-white/30 mt-8'></span>
       <Footer/>
     </div>
     </div>

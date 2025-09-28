@@ -5,7 +5,7 @@ const MobilePetrol = () => {
   return (
     <div className="relative">
       {/* Hero section with background */}
-      <div className="relative h-screen bg-[#2f3c6e]">
+      <div className="relative h-screen bg-[#02278a]">
         <div className="absolute inset-0">
           <div 
             className="absolute inset-0"

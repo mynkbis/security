@@ -1,17 +1,18 @@
 
 import { Twitter, FacebookIcon, InstagramIcon, LucideLinkedin, X } from "lucide-react"
 import { Link } from "react-router-dom"
-import logo from "../assets/logo1.jpeg"
+import logo from "../assets/logo.jpeg"
 import QuoteModal from "./Modal/Joinus"
 import { useState } from "react"
+import twitterLogo from "../assets/twitter.png"
 export default function Footer() {
    const [show, setShow]=useState(false)
     const handleJoin=()=>{
       setShow(!show)
     }
   return (
-    <footer className=" w-full flex justify-center bg-[#2f3c6e] text-white py-12 px-4 md:px-6 pb-40">
-      <div className="  flex flex-wrap justify-center w-full">
+    <footer className=" w-full  flex justify-center bg-[#02278a] text-white py-12 px-4 md:px-6 pb-40">
+      <div className=" max-w-7xl flex flex-wrap justify-center w-full">
         {/* Left Column */}
         <div className="w-full md:w-1/3 mb-8 md:mb-0 text-center">
           <h2 className="text-xl font-bold mb-4">Contact Us</h2>
@@ -51,23 +52,25 @@ export default function Footer() {
           <img
             src={logo}
             alt="N Force Security"
-            className="h-20 w-50 mb-2"
+            className="h-12 w-50 mb-2 shadow-xl rounded-full"
           />
 
           {/* Follow Us */}
           <h2 className="text-xl font-bold mb-4">Follow Us</h2>
-          <div className="flex space-x-4 mb-8">
+          <div className="flex space-x-4 mb-8 items-baseline">
             <Link to="https://www.facebook.com/share/15f9PRKU5R/ " className="hover:text-blue-400 transition-colors">
-              <FacebookIcon className="text-white" size={24} />
+              <FacebookIcon className="text-white bg-blue-500 rounded-sm p-0.5 shadow-xl" size={24} />
            </Link>
-           <Link to="https://x.com/nforcesec?t=UfNgyuksSZTt6owADPPxPA&s=08 " className="hover:text-blue-400 transition-colors">
-              <X size={24} />
+           <Link to="https://x.com/nforcesec?t=UfNgyuksSZTt6owADPPxPA&s=08 " className="hover:text-blue-400 shadow-xl transition-colors">
+             <div className="shadow-3xl">
+              <img src={twitterLogo} className="rounded-full w-[26px] shadow-xl" />
+              </div> 
            </Link>
-           <Link to="#" className="hover:text-blue-400 transition-colors">
+           {/* <Link to="#" className="hover:text-blue-400 transition-colors">
               <LucideLinkedin size={24} />
-           </Link>
-           <Link to="https://www.instagram.com/nforce11" className="hover:text-blue-400 transition-colors">
-              <InstagramIcon className="text-white" size={24} />
+           </Link> */}
+           <Link to="https://www.instagram.com/nforce11" className="hover:text-blue-400 ">
+              <InstagramIcon className="text-white bg-gradient-to-t from-purple-500 to-pink-500 rounded-lg shadow-xl" size={24}/>
            </Link>
           </div>
           <QuoteModal isOpen={show} onClose={() => handleJoin()} />

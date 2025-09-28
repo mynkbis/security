@@ -8,7 +8,7 @@ const TopBanner = () => {
     setShow(!show)
   }
   return (
-    <div className="hidden md:block bg-[#2f3c6e] w-full py-2 px-4">
+    <div className="hidden md:block bg-[#02278a] w-full py-2 px-4">
     <div className="max-w-7xl mx-auto flex flex-wrap justify-center items-center text-sm text-white">
       <div className="flex items-center space-x-4">
         <Link className="flex items-center space-x-2">

@@ -29,7 +29,7 @@ const Home = () => {
 
           {/* Hero Content */}
           <div className="relative flex flex-col justify-center items-center h-full text-center">
-            <h1 className="text-white text-5xl font-bold mb-4 transform hover:scale-105 cursor-pointer">Security</h1>
+            <h1 className="text-white text-5xl font-bold mb-4 transform hover:scale-105 cursor-pointer">N-Force Security</h1>
             <div className="text-white/90 flex gap-2">
               <Link to="/" className="!text-white hover:underline transform hover:scale-105">Home</Link>
               <span>{">>"}</span>
@@ -43,7 +43,7 @@ const Home = () => {
         {/* Two Column Section */}
         <div className="flex flex-col md:flex-row relative z-10">
           {/* Left Column */}
-          <div className="w-full md:w-1/2 bg-[#2f3c6e] text-white p-12 lg:p-16 transition-transform transform cursor-pointer">
+          <div className="w-full md:w-1/2 bg-[#02278a] text-white p-12 lg:p-16 transition-transform transform cursor-pointer">
             <h2 className="text-3xl lg:text-4xl font-bold mb-6 hover:scale-105 ">Highly Skilled & Professional Team</h2>
             <p className="text-white/90 leading-relaxed hover:scale-105 ">
            Our security personnel are highly trained and committed to delivering reliable protection. They embody professionalism, discipline, and dedication, ensuring every assignment is managed with discretion and efficiency. With our team on-site, you can have confidence in your safety and peace of mind.
