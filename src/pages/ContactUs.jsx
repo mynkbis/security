@@ -51,8 +51,8 @@ const ContactPage = () => {
 
     emailjs
       .send(
-        "YOUR_SERVICE_ID", // Replace with your EmailJS service ID
-        "YOUR_TEMPLATE_ID", // Replace with your EmailJS template ID
+        import.meta.env.VITE_YOUR_SERVICE_ID,
+        import.meta.env.VITE_YOUR_TEMPLATE_ID,
         {
           to_name: "Admin",
           first_name: formData.firstName,
@@ -61,7 +61,7 @@ const ContactPage = () => {
           phone: formData.phone,
           message: formData.message,
         },
-        "YOUR_PUBLIC_KEY" // Replace with your EmailJS public key
+          import.meta.env.VITE_YOUR_PUBLIC_KEY
       )
       .then((result) => {
         alert("Message sent successfully!");
