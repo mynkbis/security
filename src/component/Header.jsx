@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import { Menu, X, ChevronDown, ChevronUp } from 'lucide-react';
-import { useLocation, useNavigate } from 'react-router-dom';
-import menuItems from '../utils/menu';
-import TopBanner from './TopBanner';
+import React, { useState } from "react";
+import { Menu, X, ChevronDown, ChevronUp } from "lucide-react";
+import { useLocation, useNavigate } from "react-router-dom";
+import menuItems from "../utils/menu";
+import TopBanner from "./TopBanner";
 import logo from "../assets/logo.jpeg";
 
 const Header = () => {
@@ -40,27 +40,30 @@ const Header = () => {
   // Check if current route matches item (for highlighting)
   const isActiveRoute = (item) => {
     if (!item.path) return false;
-    
+
     // Exact match for non-dropdown items
     if (!item.dropdown) {
       return location.pathname === item.path;
     }
-    
+
     // For dropdown items, check if current path starts with item path
-    return location.pathname === item.path || location.pathname.startsWith(item.path + '/');
+    return (
+      location.pathname === item.path ||
+      location.pathname.startsWith(item.path + "/")
+    );
   };
 
   // Close dropdown when clicking outside
   const handleDocumentClick = (e) => {
-    if (!e.target.closest('.dropdown-container')) {
+    if (!e.target.closest(".dropdown-container")) {
       setActiveDropdown(null);
     }
   };
 
   React.useEffect(() => {
-    document.addEventListener('click', handleDocumentClick);
+    document.addEventListener("click", handleDocumentClick);
     return () => {
-      document.removeEventListener('click', handleDocumentClick);
+      document.removeEventListener("click", handleDocumentClick);
     };
   }, []);
 
@@ -71,24 +74,30 @@ const Header = () => {
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex justify-between items-center h-20">
             {/* Logo */}
-            <div className="flex-shrink-0 overflow-hidden" onClick={() => { navigate("/") }}>
-              <img className="sm:w-60 h-auto cursor-pointer w-40" src={logo} alt="logo" />
+            <div
+              className="flex-shrink-0 overflow-hidden"
+              onClick={() => {
+                navigate("/");
+              }}
+            >
+              <img
+                className="sm:w-60 h-auto cursor-pointer w-40"
+                src={logo}
+                alt="logo"
+              />
             </div>
 
             {/* Desktop menu */}
             <div className="hidden md:flex space-x-8">
               {menuItems.map((item, index) => (
-                <div
-                  key={index}
-                  className="relative dropdown-container"
-                >
-             <div className={`flex items-center`}>
+                <div key={index} className="relative dropdown-container">
+                  <div className={`flex items-center`}>
                     <span
                       onClick={() => handleItemClick(item)}
                       className={`text-blue-900 font-bold px-2 flex items-center rounded-md p-2 transition-all duration-300 ease-in-out cursor-pointer ${
                         isActiveRoute(item)
-                          ? 'text-white bg-[#02278a]'
-                          : 'hover:bg-[#02278a] hover:text-white'
+                          ? "text-white bg-[#02278a]"
+                          : "hover:bg-[#02278a] hover:text-white"
                       }`}
                     >
                       {item.name}
@@ -98,27 +107,38 @@ const Header = () => {
                         onClick={(e) => toggleDesktopDropdown(index, e)}
                         className={`ml-1 p-1 rounded transition-all duration-300 ease-in-out `}
                       >
-                        <ChevronDown size={16} className={`text-black transition-transform duration-200 cursor-pointer ${
-                          activeDropdown === index ? 'rotate-180' : ''
-                        }`} />
+                        <ChevronDown
+                          size={16}
+                          className={`text-black transition-transform duration-200 cursor-pointer ${
+                            activeDropdown === index ? "rotate-180" : ""
+                          }`}
+                        />
                       </button>
                     )}
                   </div>
 
                   {/* Desktop Dropdown Menu */}
                   {item.dropdown && activeDropdown === index && (
-                    <ul className="absolute left-0 mt-2 bg-[#02278a] shadow-lg rounded w-48 text-sm z-10 animate-fadeIn">
+                    <ul className="absolute group left-0 mt-2 bg-[#02278a] shadow-lg rounded w-48 text-sm z-10 animate-fadeIn">
                       {item.dropdown.map((subItem, subIndex) => (
                         <li
                           key={subIndex}
                           onClick={() => handleSubItemClick(subItem)}
                           className={`px-4 py-2 cursor-pointer border-b border-white/10 last:border-b-0 transition-colors duration-200 ${
                             location.pathname === subItem.path
-                              ? 'bg-white/20'
-                              : 'hover:bg-white/10'
+                              ? "bg-white"
+                              : "hover:bg-white"
                           }`}
                         >
-                          <span className="text-white font-medium">{subItem.name}</span>
+                          <span
+                            className={`font-medium transition-colors duration-200 ${
+                              location.pathname === subItem.path
+                                ? "text-[#02278a]"
+                                : "text-white font-bold group-hover:text-blue-800"
+                            }`}
+                          >
+                            {subItem.name}
+                          </span>
                         </li>
                       ))}
                     </ul>
@@ -143,7 +163,10 @@ const Header = () => {
             <div className="md:hidden py-4 bg-white border-t">
               <div className="flex flex-col space-y-2">
                 {menuItems.map((item, index) => (
-                  <div key={index} className="border-b border-gray-100 last:border-b-0 pb-2">
+                  <div
+                    key={index}
+                    className="border-b border-gray-100 last:border-b-0 pb-2"
+                  >
                     <div className="flex items-center justify-between">
                       <span
                         onClick={() => {
@@ -156,8 +179,8 @@ const Header = () => {
                         }}
                         className={`text-blue-900 font-bold px-3 py-3 flex-grow flex items-center rounded transition-all duration-300 ease-in-out cursor-pointer ${
                           isActiveRoute(item)
-                            ? 'bg-[#02278a] text-white'
-                            : 'hover:bg-[#02278a] hover:text-white'
+                            ? "bg-[#02278a] text-white"
+                            : "hover:bg-[#02278a] hover:text-white"
                         }`}
                       >
                         {item.name}
@@ -169,19 +192,20 @@ const Header = () => {
                             toggleMobileDropdown(index);
                           }}
                           className={`p-3 rounded transition-colors duration-200 ${
-                            activeDropdown === index 
-                              ? 'bg-gray-200' 
-                              : 'hover:bg-gray-100'
+                            activeDropdown === index
+                              ? "bg-gray-200"
+                              : "hover:bg-gray-100"
                           }`}
                         >
-                          {activeDropdown === index ?
-                            <ChevronUp size={18} className="text-blue-900" /> :
+                          {activeDropdown === index ? (
+                            <ChevronUp size={18} className="text-blue-900" />
+                          ) : (
                             <ChevronDown size={18} className="text-blue-900" />
-                          }
+                          )}
                         </button>
                       )}
                     </div>
-                    
+
                     {/* Mobile Dropdown Items */}
                     {item.dropdown && activeDropdown === index && (
                       <div className="mt-2 space-y-1 bg-gray-200 rounded-lg animate-slideDown">
@@ -195,8 +219,8 @@ const Header = () => {
                             }}
                             className={`block px-4 py-3 rounded-md cursor-pointer transition-all duration-200 ${
                               location.pathname === subItem.path
-                                ? 'bg-[#02278a] text-white shadow-sm'
-                                : 'text-blue-700 hover:bg-[#02278a] hover:text-white'
+                                ? "bg-[#02278a] text-white shadow-sm"
+                                : "text-blue-700 hover:bg-[#02278a] hover:text-white"
                             }`}
                           >
                             <span className="font-medium">{subItem.name}</span>
