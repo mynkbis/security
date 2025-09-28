@@ -3,7 +3,7 @@ const menuItems = [
     { name: "About Us", path: "/about" },
     {
       name: "Our Services",
-      // path: "/",
+      path: "/services",
       dropdown: [
         { name: "Security Guards", path: "/services/guards" },
         { name: "Crowd Control", path: "/services/crowd-control" },

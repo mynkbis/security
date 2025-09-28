@@ -82,7 +82,7 @@ const Header = () => {
                   key={index}
                   className="relative dropdown-container"
                 >
-                  <div className="flex items-center">
+             <div className={`flex items-center`}>
                     <span
                       onClick={() => handleItemClick(item)}
                       className={`text-blue-900 font-bold px-2 flex items-center rounded-md p-2 transition-all duration-300 ease-in-out cursor-pointer ${
@@ -96,13 +96,9 @@ const Header = () => {
                     {item.dropdown && (
                       <button
                         onClick={(e) => toggleDesktopDropdown(index, e)}
-                        className={`ml-1 p-1 rounded transition-all duration-300 ease-in-out ${
-                          isActiveRoute(item)
-                            ? 'text-white hover:bg-white/20'
-                            : 'text-blue-900 hover:bg-[#02278a] hover:text-white'
-                        }`}
+                        className={`ml-1 p-1 rounded transition-all duration-300 ease-in-out `}
                       >
-                        <ChevronDown size={16} className={`transition-transform duration-200 cursor-pointer ${
+                        <ChevronDown size={16} className={`text-black transition-transform duration-200 cursor-pointer ${
                           activeDropdown === index ? 'rotate-180' : ''
                         }`} />
                       </button>
