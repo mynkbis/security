@@ -48,3 +48,7 @@ button:focus-visible {
 .common-shadow{
   box-shadow: 1px 0px 6px white !important;
 }
+
+#controller, .vsc-controller{
+  display: none !important;
+}

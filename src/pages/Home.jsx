@@ -18,6 +18,7 @@ const Home = () => {
             loop
             muted
             playsInline
+            disablePictureInPicture
             className="absolute inset-0 w-full h-full object-cover "
           >
             <source src={vid} type="video/mp4" />
