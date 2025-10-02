@@ -71,7 +71,7 @@ const Header = () => {
     <div className="w-full relative">
       <TopBanner />
       <nav className="bg-white shadow-md">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl mx-auto px-2">
           <div className="flex justify-between items-center h-20">
             {/* Logo */}
             <div
