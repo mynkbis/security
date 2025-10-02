@@ -66,7 +66,7 @@ export default function Footer() {
                 fill="white"
                 className="text-blue-900 rounded-xl"
               />
-             <span className="text-white">+61 1300 55 2025</span>
+             <span className="text-white">+61 0479 007 444</span>
             </Link>
               <Link to="" className="flex items-center space-x-2 ml-2 mr-2">
               <Phone
