@@ -3,7 +3,7 @@ import { Menu, X, ChevronDown, ChevronUp } from "lucide-react";
 import { useLocation, useNavigate } from "react-router-dom";
 import menuItems from "../utils/menu";
 import TopBanner from "./TopBanner";
-import logo from "../assets/logo.jpeg";
+import logo from "../assets/logo1.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -71,7 +71,7 @@ const Header = () => {
     <div className="w-full relative">
       <TopBanner />
       <nav className="bg-white shadow-md">
-        <div className="max-w-7xl mx-auto px-4">
+        <div className="max-w-7xl mx-auto">
           <div className="flex justify-between items-center h-20">
             {/* Logo */}
             <div
