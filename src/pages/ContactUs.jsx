@@ -115,12 +115,12 @@ const ContactPage = () => {
               </div>
               <span className="text-blue-900 text-sm md:text-lg">Operations@nforcesecurity.net</span>
             </div>
-            <div className="flex items-center gap-4">
+            {/* <div className="flex items-center gap-4">
               <div className="bg-[#02278a] p-2 rounded-full">
                 <MapPin size={20} className="text-white" />
               </div>
               <span className="text-blue-900 text-sm md:text-lg">4 Guell Lane, Clyde North, VIC 3978</span>
-            </div>
+            </div> */}
           </div>
 
           {/* Form Section */}
